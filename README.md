@@ -1,4 +1,4 @@
-This repository contains code for the ICLR 2026 submission: **Why Transformers Succeed and Fail at Compositional Generalization: Composition Equivalence and Module Coverage**.
+This repository contains code for the ICML 2026 submission: **Why Transformers Succeed and Fail at Compositional Generalization: Composition Equivalence and Module Coverage**.
 
 Our implementation builds on the code provided by (Ramesh et al., 2024): https://github.com/rahul13ramesh/compositional_capabilities/
 
