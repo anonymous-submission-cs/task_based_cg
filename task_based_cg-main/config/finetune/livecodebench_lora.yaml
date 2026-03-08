@@ -1,0 +1,46 @@
+# LiveCodeBench LoRA finetuning configuration
+seed: 0
+pretrained: true
+model_name: "llama3"
+device: "cuda"
+bf16: true
+epochs: 1
+batch_size: 24
+num_workers: 1
+max_seq_len: 256
+include_fewshot: true
+gradient_checkpointing: true
+resume_if_available: true
+
+# Data location
+holdout_size: 54
+data_seed: 0
+data_subdir: "equiv_leakage_shared_0.66_heldoutfrac_0.0"
+train_data_path: ""  # Optional explicit path to train.pkl
+test_data_path: ""   # Optional explicit path to test.pkl
+
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  bias: "none"
+  # Update target_modules per model.
+  # Llama/Gemma: ["q_proj", "k_proj", "v_proj", "o_proj"]
+  # GPT-2: ["c_attn", "c_proj"]
+  # Granite/Deepseek may differ; inspect model modules if needed.
+  target_modules: ["q_proj", "k_proj", "v_proj", "o_proj"]
+
+optimizer:
+  learning_rate: 0.0002
+  weight_decay: 0.0
+  beta1: 0.9
+  beta2: 0.95
+  grad_clip: 1.0
+  decay_lr: true
+  warmup_iters: 200
+  min_lr: 0.00002
+
+log:
+  eval_interval: 5000
+  log_interval: 50
+  save_interval: 1000

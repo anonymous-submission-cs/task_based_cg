@@ -1,0 +1,6 @@
+seed: 0
+xlim: [0, 20000]  # Range of checkpoints to evaluaate
+nckpts: 20        # Number of checkpoints to evaluate
+
+nsamples: 10000     # Number of samples to evaluate (per function composition)
+nbatch: 1000        # Batch-size  = nbatch * nsamples
