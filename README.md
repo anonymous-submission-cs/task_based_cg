@@ -10,3 +10,4 @@ To reproduce the results:
 4. Plot the compositional generalization performance of direct and step-by-step models for absolute and relative positional embeddings. This script generates the plots presented in the paper.
 `./bash_scripts/plotting.sh`
 5. Genrate TSNE plots (Figures 12 and 13) by running equivalence class and representation analysis during evaluation and then running the following bash script. `./bash_scripts/equivalence_analysis.sh`
+6. Run `./bash_scripts/data_livecodebench.sh`, `./bash_scripts/train_lora.sh`, `./bash_scripts/evaluate_lora.sh` to reproduce the results for fine-tuning LoRAs for LiveCodeBench dataset.
